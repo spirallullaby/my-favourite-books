@@ -12,22 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2021_01_02_165557) do
 
-  create_table "book_genres", force: :cascade do |t|
-    t.string "genre_name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.string "isbn"
     t.datetime "publish_date"
+    t.string "genre"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "book_genres_id"
-    t.index ["book_genres_id"], name: "index_books_on_book_genres_id"
   end
 
-  add_foreign_key "books", "book_genres", column: "book_genres_id"
 end

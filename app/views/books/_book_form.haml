@@ -1,0 +1,14 @@
+= label :book, :title, 'Title'
+= text_field :book, :title
+
+= label :book, :isbn, 'ISBN'
+= text_field :book, :isbn
+
+= label :book, :genre, 'Genre'
+= select :book, :genre, ["Science fiction", "Drama", "Action and Adventure", "Romance", "Mystery", "Horror"]
+
+= label :book, :description, 'Description'
+= text_area :book, :description
+
+= label :book, :publish_date, 'Published on'
+= date_select :book, :publish_date

@@ -4,7 +4,7 @@
 %ul#details
   %li
     Genre:
-    = @book.genre_name
+    = @book.genre
   %li
     ISBN number:
     = @book.isbn
@@ -17,4 +17,6 @@
 
 %p#description= @book.description
 
+= link_to 'Edit info', edit_book_path(@book)
+= link_to 'Delete', book_path(@book), :method => :delete
 = link_to 'Back to book list', books_path

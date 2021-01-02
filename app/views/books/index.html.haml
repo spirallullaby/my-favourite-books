@@ -12,7 +12,7 @@
     - @books.each do |book|
       %tr
         %td= book.title 
-        %td= book.genre_name
+        %td= book.genre
         %td= book.isbn
         %td= book.publish_date.strftime("%B %d, %Y")
         %td= link_to "More about #{book.title}", book_path(book)
