@@ -1,0 +1,11 @@
+!!! 5
+%html
+  %head
+    %title My favourite books!
+    = stylesheet_link_tag 'application'
+    = javascript_pack_tag 'application'
+    = csrf_meta_tags
+
+  %body
+    #main
+      = yield

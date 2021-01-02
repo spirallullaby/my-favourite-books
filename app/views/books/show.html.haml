@@ -1,0 +1,20 @@
+-# in app/views/books/detail.html.haml
+%h2 Details about #{@book.title}
+
+%ul#details
+  %li
+    Genre:
+    = @book.genre_name
+  %li
+    ISBN number:
+    = @book.isbn
+  %li
+    Publish date:
+    = @book.publish_date.strftime("%B %d, %Y")
+
+
+%h3 Description:
+
+%p#description= @book.description
+
+= link_to 'Back to book list', books_path
