@@ -18,4 +18,7 @@ class Book < ApplicationRecord
         errors.add(:isbn, 'must be added if the book was released after 1967') if
         publish_date > Date.parse('1 Jan 1967') && (isbn.nil? || isbn.empty?)
     end
+    before_save do
+        self.title = title.split.map(&:capitalize).join(' ')
+    end
 end
