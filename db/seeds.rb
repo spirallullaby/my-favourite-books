@@ -8,7 +8,7 @@
 books = [
     {
         title:"Lord of the rings", 
-        genre:"Action and adventure",
+        genre:"Action and Adventure",
         description: "In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, the Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell by chance into the hands of the hobbit Bilbo Baggins.",
         isbn: "9780261102309",
         publish_date: DateTime.parse("19/09/1991")

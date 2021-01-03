@@ -1,6 +1,14 @@
 class Book < ApplicationRecord  
     def self.all_genres
-        @@all_genres = ["Science fiction", "Drama", "Action and Adventure", "Romance", "Mystery", "Horror"]
+        @@all_genres = 
+            [
+                "Science fiction",
+                "Drama",
+                "Action and Adventure",
+                "Romance",
+                "Mystery",
+                "Horror"
+            ]
     end
     validates :title, :presence => true
     validates :publish_date, :presence => true
