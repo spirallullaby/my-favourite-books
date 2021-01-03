@@ -1,0 +1,20 @@
+%h1 Similar movies to #{@given_book.title}
+ 
+%table#similar_books
+  %thead
+    %tr
+      %th Book Title
+      %th Genre
+      %th Author
+      %th ISBN Number   
+      %th Publish Date       
+      %th More Info
+  %tbody
+    - @books.each do |book|
+      %tr
+        %td= book.title 
+        %td= book.genre
+        %td= book.author
+        %td= book.isbn
+        %td= book.publish_date
+        %td= link_to "More about #{book.title}", book_path(book)

@@ -30,9 +30,9 @@ class BooksController < ApplicationController
     @books = Book.where(genre: @selected_genres.keys).order(ordering)
   end
   def show
-    id = params[:id] # retrieve book id from route
+    id = params[:id] # retrieve book id from routed
     @book = Book.find(id)# look it up
-   end
+  end
   def new
     @book = Book.new
   end
@@ -48,10 +48,10 @@ class BooksController < ApplicationController
     end
   end
   def edit
-   @book = Book.find params[:id]
+   @book = Book.find(params[:id])
   end
   def update
-   @book = Book.find params[:id]
+   @book = Book.find(params[:id])
    params.require(:book)
    permitted = params[:book].permit(:title, :isbn, :genre, :description, :publish_date)
    if @book.update(permitted)
@@ -67,4 +67,13 @@ class BooksController < ApplicationController
    flash[:notice] = "Book '#{@book.title}' deleted."
    redirect_to books_path
   end
+  def search_similar_books
+    @book = Book.find(params[:id])
+    if @book.author.nil? || @book.author.empty?
+     flash[:warning]= "'#{@book.title}' has no author info"
+     redirect_to books_path
+    else
+     @books = Book.similar_books(@book)
+    end
+   end  
 end
