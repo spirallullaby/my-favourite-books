@@ -14,7 +14,7 @@ books = [
         publish_date: DateTime.parse("19/09/1991")
     },
     {
-        title:"To kill a mockingbird", 
+        title:"To Kill A Mockingbird", 
         genre:"Drama",
         description: "The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it. To Kill A Mockingbird became both an instant bestseller and a critical success when it was first published in 1960. It went on to win the Pulitzer Prize in 1961 and was later made into an Academy Award-winning film, also a classic.",
         isbn: "9780060933272",
@@ -40,7 +40,15 @@ books = [
         description: "To the children, the town was their whole world. To the adults, knowing better, Derry Maine was just their home town: familiar, well-ordered for the most part. A good place to live. It was the children who saw - and felt - what made Derry so horribly different. In the storm drains, in the sewers, IT lurked, taking on the shape of every nightmare, each one's deepest dread. Sometimes IT reached up, seizing, tearing, killing ...",
         isbn: "9781444707861",
         publish_date: DateTime.parse("01/05/2011")
-    }]
+    },
+    {
+        title:"Carrie", 
+        genre:"Horror",
+        isbn: "9781444707070",
+        description: "A modern classic, Carrie introduced a distinctive new voice in American fiction -- Stephen King. The story of misunderstood high school girl Carrie White, her extraordinary telekinetic powers, and her violent rampage of revenge, remains one of the most barrier-breaking and shocking novels of all time.",
+        publish_date: DateTime.parse("05/05/2010")
+    }
+]
 
 books.each do |book|
  Book.create!(book)
