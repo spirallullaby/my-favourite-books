@@ -1,7 +1,7 @@
 %h2 Create New Book
 
 = form_tag '/books', :method => :post do
- 
+
   - unless @book.errors.empty?
     #warning
       Errors prevented this book from being #{controller.action_name}d:
