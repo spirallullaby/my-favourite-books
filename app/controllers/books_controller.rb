@@ -79,6 +79,7 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
 
+  # similar books - same author
   def search_similar_books
     @book = Book.find(params[:id])
     if @book.author.nil? || @book.author.empty?

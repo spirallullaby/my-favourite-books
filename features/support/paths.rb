@@ -18,14 +18,14 @@ module NavigationHelpers
     #   when /^(.*)'s profile page$/i
     #     user_profile_path(User.find_by_login($1))
     when /^the home page/
-     books_path
+      books_path
     when /^the edit page for "([^"]+)"$/
-     edit_book_path(Book.find_by_title($1).id)
-    when /^the details page for "([^"]+)"$/ 
-     book_path(Book.find_by_title $1)
+      edit_book_path(Book.find_by_title($1).id)
+    when /^the details page for "([^"]+)"$/
+      book_path(Book.find_by_title $1)
     when /^the Similar Books page for "(.*)"$/
-     search_similar_books_path(Book.find_by_title($1).id)   
-   
+      search_similar_books_path(Book.find_by_title($1).id)
+
     else
       begin
         page_name =~ /^the (.*) page$/
@@ -33,7 +33,7 @@ module NavigationHelpers
         self.send(path_components.push('path').join('_').to_sym)
       rescue NoMethodError, ArgumentError
         raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
-          "Now, go and add a mapping in #{__FILE__}"
+              "Now, go and add a mapping in #{__FILE__}"
       end
     end
   end

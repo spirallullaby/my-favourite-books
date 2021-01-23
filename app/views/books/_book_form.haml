@@ -1,28 +1,29 @@
 = label :book, :title, 'Title'
-%br
 = text_field :book, :title
+%br 
 %br 
 
 = label :book, :author, 'Author'
-%br
 = text_field :book, :author
 %br
+%br 
 
 = label :book, :isbn, 'ISBN'
-%br
 = text_field :book, :isbn
 %br
+%br 
 
 = label :book, :genre, 'Genre'
-%br
 = select :book, :genre, ["Science fiction", "Drama", "Action and Adventure", "Romance", "Mystery", "Horror"]
 %br
+%br 
 
 = label :book, :description, 'Description'
-%br
 = text_area :book, :description
 %br
+%br 
 
 = label :book, :publish_date, 'Published on'
-%br
 = date_select :book, :publish_date, start_year:1900
+
+%br
